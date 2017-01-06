@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    height: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; 
+    width: inherit;
+}
+
+*:active,
+*:focus {
+    outline: none;
+}
+
+*:disabled {
+    cursor: default;
+    text-shadow: none;
+}
+
+button,
+input,
+label,
+::-webkit-slider-runnable-track,
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button,
+input {
+    color: inherit;
+}
+
+button {
+    font-weight: 600;
+    text-align: center;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}

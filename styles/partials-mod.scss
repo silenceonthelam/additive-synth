@@ -1,0 +1,27 @@
+.part__list__item--sel {
+    @extend .part__list__item;
+    flex-grow: 8;
+    flex-shrink: 0;
+    transition: flex-grow .4s ease-out;
+}
+
+.part__list__item--sel-off-1 {
+    @extend .part__list__item;
+    flex-grow: 5;
+    flex-shrink: 0;
+    transition: flex-grow .25s ease-out;
+}
+
+.part__list__item--sel-off-2 {
+    @extend .part__list__item;
+    flex-grow: 3;
+    flex-shrink: 0;
+    transition: flex-grow .15s ease-out;
+}
+
+.part__list__item--sel-off-3 {
+    @extend .part__list__item;
+    flex-grow: 2;
+    flex-shrink: 0;
+    transition: flex-grow .1s ease-out;
+}

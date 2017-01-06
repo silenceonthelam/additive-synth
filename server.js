@@ -1,16 +1,28 @@
 var webpack = require("webpack"),
-    WebpackDevServer = require("webpack-dev-server"),
+    webpackDevMiddleware = require("webpack-dev-middleware"),
+    webpackHotMiddleware = require("webpack-hot-middleware"),
     config = require("./webpack.config");
 
+var app = new (require("express"))(),
+    port = 3456;
 
-new WebpackDevServer(webpack(config), {
-	cache: false,
-    publicPath: config.output.publicPath,
-    hot: true,
-    stats: { colors: true }
-}).listen(8080, "0.0.0.0", function(err, result) {
-    if (err) {
-        console.log(err);
+var compiler = webpack(config);
+app.use(webpackDevMiddleware(compiler, { 
+    noInfo: true, 
+    publicPath: config.output.publicPath, 
+    stats: {colors: true}, 
+    watch: true 
+}));
+app.use(webpackHotMiddleware(compiler));
+
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/index-dev.html");
+})
+
+app.listen(port, function(error) {
+    if (error) {
+        console.error(error);
+    } else {
+        console.info("==> Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port);
     }
-    console.log("listening on port 8080");
 });

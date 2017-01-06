@@ -1,0 +1,139 @@
+.part__list {   
+    background-color: hsla(233, 55%, 15%, 1);
+    background-image: linear-gradient(
+        to top left,
+        hsla(173, 85%, 50%, 0) 80%, 
+        hsla(173, 100%, 45%, 1) 100%
+    ), linear-gradient(
+        12deg,
+        hsla(233, 90%, 65%, 0) 0%, 
+        hsla(233, 90%, 65%, 1) 75%, 
+        hsla(233, 70%, 55%, 1) 75%            
+    );
+    border-radius: 1px;
+    box-shadow: inset 0 -2px 3px 0 hsla(233, 35%, 25%, .15),
+                inset 0 0px 6px 0 hsla(233, 35%, 25%, .25);  
+    cursor: pointer;           
+    display: flex;
+    flex: 0 1 100%;
+    height: auto;
+    justify-content: space-around;
+    padding: 40px 10px 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.part__list__item {
+    background-clip: padding-box;
+    border-bottom: 2px solid hsla(233, 35%, 75%, .25);
+    border-bottom-left-radius: 4em 1em;
+    border-bottom-right-radius: 4em 1em;
+    border-left: 3px solid hsla(233, 25%, 15%, .15);
+    border-right: 3px solid hsla(233, 25%, 15%, .15);
+    border-top-left-radius: 1em 2em;
+    border-top-right-radius: 1em 2em;     
+    box-shadow: inset 0 -1px 2px 0 hsla(233, 15%, 100%, .5),
+                0 1px 0 0 hsla(233, 15%, 100%, .5),
+                0 6px 0px 0 hsla(233, 15%, 35%, .1),
+                0 32px 0px 0 hsla(233, 5%, 100%, .35),
+                0 36px 0px 0 hsla(233, 15%, 85%, .35);
+    flex: 1 1 auto;
+    height: auto;
+    margin: 0 .5%;
+    position: relative;
+    transition: flex-grow .5s;
+    width: auto;
+
+    &::before {
+        background-clip: content-box;
+        background-color: hsla(233, 25%, 95%, .15);
+        border-bottom: 3px solid hsla(233, 25%, 85%, .35);
+        border-bottom-width: 4px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 1px 0 hsla(233, 25%, 95%, .75),
+                    0 -1px 6px -2px hsla(59, 75%, 65%, .95);
+        content: "";
+        height: 4px;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        top: -3px;
+        width: 67%;
+        z-index: 0;
+    }
+
+    &::after {
+        background-clip: padding-box;
+        background-color: hsla(233, 25%, 75%, .05);
+        border: 3px solid hsla(233, 15%, 51.25%, .25);
+        border-bottom-width: 3px;
+        border-radius: 2px / 3px;
+        border-top-color: hsla(233, 25%, 65%, .25); 
+        border-bottom-color: hsla(233, 50%, 35%, .15); 
+        box-shadow: 0 3px 6px -3px hsla(59, 100%, 95%, .5);
+        content: "";
+        height: 3px;
+        left: -3px;
+        position: absolute;
+        top: 6px;
+        width: 100%;
+        z-index: 9;
+    }
+}
+
+.part__list__item__id {
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-color: hsla(173, 70%, 35%, 1);
+    bottom: -42px;
+    color: hsla(233, 50%, 50%, .5);
+    font-size: 12px;
+    letter-spacing: 0;
+    left: 0%;
+    line-height: 36px;
+    margin: 0 auto;
+    right: 0%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px 0 hsla(173, 15%, 80%, .5),
+                 0 -1px 0 hsla(173, 15%, 25%, .5);  
+    width: inherit;  
+    z-index: 1;   
+}
+
+.part__list--playing {
+    @extend .part__list;
+    background-color: hsla(59, 100%, 72%, 1);
+    background-image: linear-gradient(
+        to top right,
+        hsla(173, 85%, 50%, 0) 50%, 
+        hsla(173, 100%, 45%, 1) 100%
+    ), linear-gradient(
+        12deg,
+        hsla(233, 90%, 65%, 0) 0%, 
+        hsla(233, 90%, 65%, 1) 75%, 
+        hsla(233, 70%, 55%, 1) 75%            
+    );        
+    box-shadow: inset 0 2px 3px 0 hsla(233, 100%, 90%, .95);    
+    cursor: default;
+
+    .part__list__item {
+        box-shadow: inset 0 -1px 2px 0 hsla(233, 15%, 100%, .5),
+                    0 1px 0 0 hsla(233, 15%, 100%, .5),
+                    0 6px 0px 0 hsla(233, 15%, 35%, .1),
+                    0 12px 0px 0 hsla(233, 15%, 100%, .2),
+                    0 14px 0px 0 hsla(233, 15%, 35%, .0435),
+                    0 32px 0px 0 hsla(233, 5%, 100%, .65),
+                    0 36px 0px 0 hsla(233, 5%, 75%, .5),
+                    0 36px 0px -1px hsla(233, 65%, 50%, .75);        
+    }
+
+    .part__list__item__id {
+        background-color: hsla(59, 100%, 72%, 1);
+        color: transparent;   
+        text-shadow: 0 -1px 0 hsla(173, 90%, 35%, .5),
+                     0 1px 1px hsla(173, 50%, 80%, .5); 
+    }
+}

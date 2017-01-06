@@ -1,8 +1,18 @@
-"use strict";
+import {AdditiveSynth} from "./components/AdditiveSynth";
+import {createStore}   from "redux";
+import {Provider}      from "react-redux";
+import React           from "react";
+import {render}        from "react-dom";
+import synthApp        from "./reducers";
 
-require("../styles/style.scss");
+import "../styles/style.scss";
 
-var React = require("react"),
-    Synth = require("./components/Synth");
+const rootElem = document.getElementById("root");
+const store = createStore(synthApp);
 
-React.render(<Synth />, document.getElementById("synth"));
+render(
+    <Provider store={store}>
+        <AdditiveSynth />
+    </Provider>,
+    rootElem
+);
